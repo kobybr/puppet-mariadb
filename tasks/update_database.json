@@ -1,0 +1,27 @@
+{
+  "puppet_task_version": 1,
+  "supports_noop": false,
+  "description": "Updates database to latest known version.",
+  "parameters": {
+    "puppet_path": {
+      "description": "Path to puppet executable",
+      "type": "Pattern[/\A[^\/\\]*\z/]",
+      "default": "/opt/puppetlabs/bin"
+    },
+    "service_name": {
+      "description": "Service name of mariadb",
+      "type": "String[1]",
+      "default": "mariadb"
+    },
+    "removecurrent": {
+      "description": "Remove existing package prior to upgrade",
+      "type": "Boolean",
+      "default": false
+    },
+    "galera_new_cluster": {
+      "description": "Start first node in a cluster",
+      "type": "Boolean",
+      "default": false
+    }
+  }
+}
